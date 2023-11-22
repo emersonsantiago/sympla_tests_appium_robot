@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231121 23:10:21.483" rpa="false" schemaversion="4">
+<suite id="s1" name="Sympla" source="C:\repositorio\ETA_Testes_Mobile\sympla_tests_appium_robot\tests\sympla.robot">
+<test id="s1-t1" name="Buscar eventos a partir do nome da cidade e validar resultados" line="11">
+<kw name="start session">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>appium:deviceName=Android Emulator</arg>
+<arg>appium:automationName=UIAutomator2</arg>
+<arg>app=${EXECDIR}/sympla.apk</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>appium:autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20231121 23:10:22.469" endtime="20231121 23:10:44.912"/>
+</kw>
+<status status="PASS" starttime="20231121 23:10:22.467" endtime="20231121 23:10:44.912"/>
+</kw>
+<kw name="validate open homepage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/labelCollectionsItemHomeDinamica</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:10:50.289" level="INFO">criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica</msg>
+<status status="PASS" starttime="20231121 23:10:44.914" endtime="20231121 23:10:50.289"/>
+</kw>
+<status status="PASS" starttime="20231121 23:10:44.913" endtime="20231121 23:10:50.289"/>
+</kw>
+<kw name="search">
+<arg>text=Recife</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/search_bar_text</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:10:50.669" level="INFO">criteria is com.sympla.tickets:id/search_bar_text</msg>
+<status status="PASS" starttime="20231121 23:10:50.290" endtime="20231121 23:10:50.669"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/search_bar_text</arg>
+<arg>text=${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231121 23:10:50.673" level="INFO">Typing text 'Recife' into text field 'id=com.sympla.tickets:id/search_bar_text'</msg>
+<msg timestamp="20231121 23:10:50.997" level="INFO">criteria is com.sympla.tickets:id/search_bar_text</msg>
+<status status="PASS" starttime="20231121 23:10:50.669" endtime="20231121 23:10:50.997"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/search_bar_text</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:10:51.000" level="INFO">Clicking element 'id=com.sympla.tickets:id/search_bar_text'.</msg>
+<msg timestamp="20231121 23:10:52.399" level="INFO">criteria is com.sympla.tickets:id/search_bar_text</msg>
+<status status="PASS" starttime="20231121 23:10:50.997" endtime="20231121 23:10:52.399"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>keycode=66</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231121 23:10:52.401" endtime="20231121 23:10:56.223"/>
+</kw>
+<status status="PASS" starttime="20231121 23:10:50.290" endtime="20231121 23:10:56.224"/>
+</kw>
+<kw name="validate result event's city">
+<arg>city=Recife</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:10:59.661" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]</msg>
+<status status="PASS" starttime="20231121 23:10:56.254" endtime="20231121 23:10:59.661"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]</arg>
+<arg>expected=${city}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231121 23:10:59.664" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]' contains text 'Recife'.</msg>
+<msg timestamp="20231121 23:11:00.157" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]</msg>
+<status status="PASS" starttime="20231121 23:10:59.661" endtime="20231121 23:11:00.157"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]</arg>
+<arg>expected=${city}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231121 23:11:00.159" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]' contains text 'Recife'.</msg>
+<msg timestamp="20231121 23:11:00.535" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[3]</msg>
+<status status="PASS" starttime="20231121 23:11:00.157" endtime="20231121 23:11:00.535"/>
+</kw>
+<status status="PASS" starttime="20231121 23:10:56.253" endtime="20231121 23:11:00.535"/>
+</kw>
+<kw name="close session">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231121 23:11:00.536" endtime="20231121 23:11:01.824"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:00.535" endtime="20231121 23:11:01.824"/>
+</kw>
+<status status="PASS" starttime="20231121 23:10:22.465" endtime="20231121 23:11:01.827"/>
+</test>
+<test id="s1-t2" name="Buscar eventos a partir do tipo de evento e validar resultados" line="22">
+<kw name="start session">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>appium:deviceName=Android Emulator</arg>
+<arg>appium:automationName=UIAutomator2</arg>
+<arg>app=${EXECDIR}/sympla.apk</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>appium:autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20231121 23:11:01.829" endtime="20231121 23:11:15.818"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:01.829" endtime="20231121 23:11:15.819"/>
+</kw>
+<kw name="validate open homepage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/labelCollectionsItemHomeDinamica</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:11:21.994" level="INFO">criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica</msg>
+<status status="PASS" starttime="20231121 23:11:15.828" endtime="20231121 23:11:21.994"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:15.828" endtime="20231121 23:11:21.994"/>
+</kw>
+<kw name="search">
+<arg>text=show</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/search_bar_text</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:11:22.300" level="INFO">criteria is com.sympla.tickets:id/search_bar_text</msg>
+<status status="PASS" starttime="20231121 23:11:21.996" endtime="20231121 23:11:22.300"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/search_bar_text</arg>
+<arg>text=${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231121 23:11:22.302" level="INFO">Typing text 'show' into text field 'id=com.sympla.tickets:id/search_bar_text'</msg>
+<msg timestamp="20231121 23:11:22.578" level="INFO">criteria is com.sympla.tickets:id/search_bar_text</msg>
+<status status="PASS" starttime="20231121 23:11:22.300" endtime="20231121 23:11:22.578"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/search_bar_text</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:11:22.580" level="INFO">Clicking element 'id=com.sympla.tickets:id/search_bar_text'.</msg>
+<msg timestamp="20231121 23:11:25.892" level="INFO">criteria is com.sympla.tickets:id/search_bar_text</msg>
+<status status="PASS" starttime="20231121 23:11:22.578" endtime="20231121 23:11:25.892"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>keycode=66</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231121 23:11:25.893" endtime="20231121 23:11:26.222"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:21.995" endtime="20231121 23:11:26.223"/>
+</kw>
+<kw name="validate result event's type">
+<arg>eventType=show</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[2]</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:11:30.239" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[2]</msg>
+<status status="PASS" starttime="20231121 23:11:26.223" endtime="20231121 23:11:30.239"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[2]</arg>
+<arg>expected=${eventType}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231121 23:11:30.241" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[2]' contains text 'show'.</msg>
+<msg timestamp="20231121 23:11:30.499" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[2]</msg>
+<status status="PASS" starttime="20231121 23:11:30.240" endtime="20231121 23:11:30.499"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:26.223" endtime="20231121 23:11:30.500"/>
+</kw>
+<kw name="close session">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231121 23:11:30.502" endtime="20231121 23:11:31.769"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:30.502" endtime="20231121 23:11:31.769"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:01.828" endtime="20231121 23:11:31.773"/>
+</test>
+<test id="s1-t3" name="Obter eventos próximos a partir da localização inserida manualmente e validar" line="32">
+<kw name="start session">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>appium:deviceName=Android Emulator</arg>
+<arg>appium:automationName=UIAutomator2</arg>
+<arg>app=${EXECDIR}/sympla.apk</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>appium:autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20231121 23:11:31.776" endtime="20231121 23:11:46.660"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:31.776" endtime="20231121 23:11:46.660"/>
+</kw>
+<kw name="validate open homepage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/labelCollectionsItemHomeDinamica</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:11:51.939" level="INFO">criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica
+criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica</msg>
+<status status="PASS" starttime="20231121 23:11:46.661" endtime="20231121 23:11:51.940"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:46.660" endtime="20231121 23:11:51.940"/>
+</kw>
+<kw name="open map">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:11:51.945" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView'.</msg>
+<msg timestamp="20231121 23:11:54.067" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:11:51.941" endtime="20231121 23:11:54.068"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:51.941" endtime="20231121 23:11:54.068"/>
+</kw>
+<kw name="open city filter">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/custom_button_counter</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:11:55.607" level="INFO">criteria is com.sympla.tickets:id/custom_button_counter</msg>
+<status status="PASS" starttime="20231121 23:11:54.070" endtime="20231121 23:11:55.607"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/custom_button_counter</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:11:55.610" level="INFO">Clicking element 'id=com.sympla.tickets:id/custom_button_counter'.</msg>
+<msg timestamp="20231121 23:11:57.494" level="INFO">criteria is com.sympla.tickets:id/custom_button_counter</msg>
+<status status="PASS" starttime="20231121 23:11:55.607" endtime="20231121 23:11:57.495"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/appCompatTextLocation</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:11:58.966" level="INFO">criteria is com.sympla.tickets:id/appCompatTextLocation</msg>
+<status status="PASS" starttime="20231121 23:11:57.495" endtime="20231121 23:11:58.966"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/appCompatTextLocation</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:11:58.969" level="INFO">Clicking element 'id=com.sympla.tickets:id/appCompatTextLocation'.</msg>
+<msg timestamp="20231121 23:11:59.152" level="INFO">criteria is com.sympla.tickets:id/appCompatTextLocation</msg>
+<status status="PASS" starttime="20231121 23:11:58.966" endtime="20231121 23:11:59.154"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:54.069" endtime="20231121 23:11:59.155"/>
+</kw>
+<kw name="choose city">
+<arg>searchCityText=Recife</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/editTxtCitiesSearch</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:00.557" level="INFO">criteria is com.sympla.tickets:id/editTxtCitiesSearch
+criteria is com.sympla.tickets:id/editTxtCitiesSearch</msg>
+<status status="PASS" starttime="20231121 23:11:59.156" endtime="20231121 23:12:00.557"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/editTxtCitiesSearch</arg>
+<arg>text=${searchCityText}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:00.560" level="INFO">Typing text 'Recife' into text field 'id=com.sympla.tickets:id/editTxtCitiesSearch'</msg>
+<msg timestamp="20231121 23:12:00.761" level="INFO">criteria is com.sympla.tickets:id/editTxtCitiesSearch</msg>
+<status status="PASS" starttime="20231121 23:12:00.558" endtime="20231121 23:12:00.761"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:00.764" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup'.</msg>
+<msg timestamp="20231121 23:12:02.203" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup</msg>
+<status status="PASS" starttime="20231121 23:12:00.761" endtime="20231121 23:12:02.203"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:59.155" endtime="20231121 23:12:02.204"/>
+</kw>
+<kw name="apply filter">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/appCompatButtonFilterApply</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:03.072" level="INFO">criteria is com.sympla.tickets:id/appCompatButtonFilterApply
+criteria is com.sympla.tickets:id/appCompatButtonFilterApply</msg>
+<status status="PASS" starttime="20231121 23:12:02.204" endtime="20231121 23:12:03.072"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/appCompatButtonFilterApply</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:03.075" level="INFO">Clicking element 'id=com.sympla.tickets:id/appCompatButtonFilterApply'.</msg>
+<msg timestamp="20231121 23:12:05.572" level="INFO">criteria is com.sympla.tickets:id/appCompatButtonFilterApply</msg>
+<status status="PASS" starttime="20231121 23:12:03.072" endtime="20231121 23:12:05.572"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:02.204" endtime="20231121 23:12:05.572"/>
+</kw>
+<kw name="validate map with events">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231121 23:12:06.569" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:12:05.573" endtime="20231121 23:12:06.570"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView</arg>
+<arg>expected=Mapa de eventos</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231121 23:12:06.572" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView' contains text 'Mapa de eventos'.</msg>
+<msg timestamp="20231121 23:12:06.859" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:12:06.570" endtime="20231121 23:12:06.859"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:05.573" endtime="20231121 23:12:06.859"/>
+</kw>
+<kw name="close session">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231121 23:12:06.862" endtime="20231121 23:12:08.025"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:06.860" endtime="20231121 23:12:08.025"/>
+</kw>
+<status status="PASS" starttime="20231121 23:11:31.775" endtime="20231121 23:12:08.033"/>
+</test>
+<test id="s1-t4" name="Favoritar e desfavoritar o evento mais visto nas últimas 24h" line="45">
+<kw name="start session">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>appium:deviceName=Android Emulator</arg>
+<arg>appium:automationName=UIAutomator2</arg>
+<arg>app=${EXECDIR}/sympla.apk</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>appium:autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20231121 23:12:08.037" endtime="20231121 23:12:22.557"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:08.036" endtime="20231121 23:12:22.558"/>
+</kw>
+<kw name="login">
+<arg>emailAccount=rigem97173@dabeixin.com</arg>
+<arg>password=Senha@2023</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:27.705" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView
+xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView
+xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:12:22.591" endtime="20231121 23:12:27.705"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:27.706" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView'.</msg>
+<msg timestamp="20231121 23:12:28.124" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[5]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:12:27.705" endtime="20231121 23:12:28.124"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/profile_btn_enter</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:29.091" level="INFO">criteria is com.sympla.tickets:id/profile_btn_enter</msg>
+<status status="PASS" starttime="20231121 23:12:28.124" endtime="20231121 23:12:29.091"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/profile_btn_enter</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:29.095" level="INFO">Clicking element 'id=com.sympla.tickets:id/profile_btn_enter'.</msg>
+<msg timestamp="20231121 23:12:29.359" level="INFO">criteria is com.sympla.tickets:id/profile_btn_enter</msg>
+<status status="PASS" starttime="20231121 23:12:29.091" endtime="20231121 23:12:29.359"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/login_collapsing_toolbar</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:30.635" level="INFO">criteria is com.sympla.tickets:id/login_collapsing_toolbar
+criteria is com.sympla.tickets:id/login_collapsing_toolbar</msg>
+<status status="PASS" starttime="20231121 23:12:29.359" endtime="20231121 23:12:30.635"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/email</arg>
+<arg>text=${emailAccount}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:30.637" level="INFO">Typing text 'rigem97173@dabeixin.com' into text field 'id=com.sympla.tickets:id/email'</msg>
+<msg timestamp="20231121 23:12:31.233" level="INFO">criteria is com.sympla.tickets:id/email</msg>
+<status status="PASS" starttime="20231121 23:12:30.636" endtime="20231121 23:12:31.233"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/password</arg>
+<arg>text=${password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:31.235" level="INFO">Typing text 'Senha@2023' into text field 'id=com.sympla.tickets:id/password'</msg>
+<msg timestamp="20231121 23:12:32.281" level="INFO">criteria is com.sympla.tickets:id/password</msg>
+<status status="PASS" starttime="20231121 23:12:31.234" endtime="20231121 23:12:32.282"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/password</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:32.286" level="INFO">Clicking element 'id=com.sympla.tickets:id/password'.</msg>
+<msg timestamp="20231121 23:12:32.984" level="INFO">criteria is com.sympla.tickets:id/password</msg>
+<status status="PASS" starttime="20231121 23:12:32.282" endtime="20231121 23:12:32.984"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/enter</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:32.986" level="INFO">Clicking element 'id=com.sympla.tickets:id/enter'.</msg>
+<msg timestamp="20231121 23:12:34.546" level="INFO">criteria is com.sympla.tickets:id/enter</msg>
+<status status="PASS" starttime="20231121 23:12:32.984" endtime="20231121 23:12:34.546"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/txtProfileUserEmail</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231121 23:12:39.796" level="INFO">criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail
+criteria is com.sympla.tickets:id/txtProfileUserEmail</msg>
+<status status="PASS" starttime="20231121 23:12:34.546" endtime="20231121 23:12:39.796"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/txtProfileUserEmail</arg>
+<arg>expected=${emailAccount}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231121 23:12:39.800" level="INFO">Verifying element 'id=com.sympla.tickets:id/txtProfileUserEmail' contains text 'rigem97173@dabeixin.com'.</msg>
+<msg timestamp="20231121 23:12:39.889" level="INFO">criteria is com.sympla.tickets:id/txtProfileUserEmail</msg>
+<status status="PASS" starttime="20231121 23:12:39.796" endtime="20231121 23:12:39.889"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:39.891" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.TextView'.</msg>
+<msg timestamp="20231121 23:12:40.703" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:12:39.889" endtime="20231121 23:12:40.705"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/labelCollectionsItemHomeDinamica</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:40.778" level="INFO">criteria is com.sympla.tickets:id/labelCollectionsItemHomeDinamica</msg>
+<status status="PASS" starttime="20231121 23:12:40.705" endtime="20231121 23:12:40.778"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:22.590" endtime="20231121 23:12:40.778"/>
+</kw>
+<kw name="include event most seen to favorite list">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.ImageView[3]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:40.781" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.ImageView[3]'.</msg>
+<msg timestamp="20231121 23:12:41.008" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.ImageView[3]</msg>
+<status status="PASS" starttime="20231121 23:12:40.779" endtime="20231121 23:12:41.008"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:40.779" endtime="20231121 23:12:41.008"/>
+</kw>
+<kw name="validate event in favorite list">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[4]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:41.013" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[4]/android.widget.TextView'.</msg>
+<msg timestamp="20231121 23:12:42.219" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[4]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231121 23:12:41.010" endtime="20231121 23:12:42.220"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/sympla_event_title</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231121 23:12:43.230" level="INFO">criteria is com.sympla.tickets:id/sympla_event_title</msg>
+<status status="PASS" starttime="20231121 23:12:42.220" endtime="20231121 23:12:43.230"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:41.010" endtime="20231121 23:12:43.230"/>
+</kw>
+<kw name="delete event from favorite list">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/floating_fav_button_image</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231121 23:12:43.231" level="INFO">Clicking element 'id=com.sympla.tickets:id/floating_fav_button_image'.</msg>
+<msg timestamp="20231121 23:12:44.213" level="INFO">criteria is com.sympla.tickets:id/floating_fav_button_image</msg>
+<status status="PASS" starttime="20231121 23:12:43.231" endtime="20231121 23:12:44.213"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231121 23:12:46.213" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231121 23:12:44.213" endtime="20231121 23:12:46.213"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/sympla_event_title</arg>
+<doc>Verifies that current page not contains `locator` element.</doc>
+<msg timestamp="20231121 23:12:46.243" level="INFO">Current page not contains element 'id=com.sympla.tickets:id/sympla_event_title'.</msg>
+<msg timestamp="20231121 23:12:46.243" level="INFO">criteria is com.sympla.tickets:id/sympla_event_title</msg>
+<status status="PASS" starttime="20231121 23:12:46.213" endtime="20231121 23:12:46.243"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/app_empty_state_text</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231121 23:12:46.281" level="INFO">criteria is com.sympla.tickets:id/app_empty_state_text</msg>
+<status status="PASS" starttime="20231121 23:12:46.243" endtime="20231121 23:12:46.281"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>id=com.sympla.tickets:id/app_empty_state_text</arg>
+<arg>expected=Nenhum evento favoritado</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231121 23:12:46.282" level="INFO">Verifying element 'id=com.sympla.tickets:id/app_empty_state_text' contains text 'Nenhum evento favoritado'.</msg>
+<msg timestamp="20231121 23:12:46.327" level="INFO">criteria is com.sympla.tickets:id/app_empty_state_text</msg>
+<status status="PASS" starttime="20231121 23:12:46.281" endtime="20231121 23:12:46.327"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:43.231" endtime="20231121 23:12:46.327"/>
+</kw>
+<kw name="close session">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231121 23:12:46.328" endtime="20231121 23:12:47.235"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:46.328" endtime="20231121 23:12:47.235"/>
+</kw>
+<status status="PASS" starttime="20231121 23:12:08.035" endtime="20231121 23:12:47.236"/>
+</test>
+<status status="PASS" starttime="20231121 23:10:21.487" endtime="20231121 23:12:47.240"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Sympla">Sympla</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

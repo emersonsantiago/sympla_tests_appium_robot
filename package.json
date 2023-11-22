@@ -1,0 +1,20 @@
+{
+  "name": "sympla_tests_appium_robot",
+  "version": "1.0.0",
+  "description": "Exercício da disciplina de Testes Mobile do curso de Especialização em Testes Ágeis do CESAR School.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "appium": "^2.2.2"
+  },
+  "devDependencies": {
+    "appium-uiautomator2-driver": "^2.34.1"
+  }
+}
